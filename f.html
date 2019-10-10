@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<title>Form</title>
+			<style>
+				body {
+					background-image: url("p.jpg");
+					background-size: 100%;
+					font-family: verdana;
+					font-size: 100%;
+					padding: 30px;
+					margin: 50px; 
+				}
+				table{
+					border:2px solid black;
+					text-align: center;
+					border-collapse: collapse;
+				}
+			</style>
+			<script>
+				function validateform(){
+
+					var Fl=document.forms["myforms"]["NAME"].value;
+					if(Fl=='')
+					{
+						alert("First name must be filled");
+						return false;
+					}
+					var Ln=document.forms["myforms"]["ln"].value;
+					if(Ln=='')
+					{
+						alert("Last name must be filled");
+						return false;
+					}
+					var x=document.forms["myforms"]["Number"].value;
+					if(x>9999999999 || x<6000000000)
+					{
+						alert("Enter a valid number\nNumber should be of 10 digits and start from 6,7,8,9");
+						return false;
+					}
+					
+					var db=document.forms["myforms"]["DOB"].value;
+					if(db=='')
+					{
+						alert("DOB must be filled");
+						return false;
+					}
+
+					var y=document.getElementById('NAME');
+					var r=document.getElementById('ln');
+					var z=document.getElementById('Mail');
+					var br="<br>";
+					document.write("First Name:");
+					document.write(y.value);
+					document.write(br);
+					document.write("Last Name:");
+					document.write(r.value);
+					document.write(br);
+					document.write("E-mail:");
+					document.write(z.value);
+
+				}
+
+			</script>
+			
+	</head>
+	<body>
+		<marquee bgcolor="wheat" behavior="alternate" scrollamount="20"><h1>Indian Institute Of Information Technology,Surat</h1></marquee>
+		<form name="myforms" onsubmit="return validateform()" method="post">
+			<table align="center">
+
+			<tr><br><br><td colspan=2 ><h1>_____Student Registration_____</h1></td></tr>
+			<tr><td><h3>First Name:</h3></td><td>
+			<input type="text" id="NAME" placeholder="Enter your name" maxlength="10"></td></tr>
+			<tr><td><h3>Last Name:</h3></td><td>
+			<input type="text" id="ln" placeholder="Enter your name" maxlength="10"></td></tr>
+			<tr><td><h3>E-mail Id:</h3></td><td>
+			<input type="email" id="Mail" placeholder="Enter your email"></td></tr>
+			<tr><td><h3>Mob.No.:</h3></td><td>
+			<input type="number" name="Number" placeholder="Enter your number"></td></tr>
+			<tr><td><h3>DOB:</h3></td><td>
+			<input type="date" name="DOB"></td></tr>
+			<tr><td><h3>Gender:</h3></td><td>
+			<input type="radio" name="Gender" value="male">Male
+			<input type="radio" name="Gender" value="female">Female</td></tr>
+			<tr><td><h3>Attachment:</h3></td><td>
+			<input type="file" size="30" accept=""></td></tr>
+			<tr><td><h3>Reg.code:</h3></td><td>
+			<input type="text" name="regcode" value="V954SA" disabled="disabled"></td></tr>
+			<tr><td colspan="2"><h1 align="center"><input type="submit" value="Submit"></h1></td></tr>
+			</table>
+		</form>
+		
+	</body>	
+</html>
